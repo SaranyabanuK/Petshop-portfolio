@@ -6,12 +6,13 @@
           <title>Welcome | Paws & Whiskers</title>
           <link rel="stylesheet" href="style.css">
           <link rel="icon" type="png" href="images/Logo.png">
+          <link rel="stylesheet" href="dalancy.css">
         </head>
         <body>
           <header>
             <nav class="navbar">
               <h1>Paws & Whiskers</h1>
-              <ul>
+              <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="home.html">Explore</a></li>
                 <li><a href="pets.html">Pets</a></li>
@@ -85,6 +86,28 @@
                   </div>
                 </div>
               </section>
+
+              <div class="chat-container" id="chatContainer">
+                <button id="chatToggle">
+                  <img src="images/Dala1.jpg" alt="Dalancy" />
+                </button>
+                <div class="chat-box" id="chatBox">
+                  <div class="chat-header">
+                    Dalancy 🐾
+                    <span class="chat-controls">
+                      <button id="minimizeBtn" title="Minimize">—</button>
+                      <button id="quitBtn" title="Quit">×</button>
+                    </span>
+                  </div>
+                  <div class="chat-messages" id="chatMessages">
+                    <div class="chat-message bot">Hi, what are we looking for?</div>
+                  </div>
+                  <div class="chat-input">
+                    <input type="text" id="userInput" placeholder="Type your message..." />
+                    <button id="sendBtn">Send</button>
+                  </div>
+                </div>
+              </div>
           <footer>
             <p>© 2025 Paws & Whiskers. All rights reserved.</p>
             <div class="animated-animals">
@@ -96,6 +119,7 @@
           </footer>
         
           <script src="script.js"></script>
+          <script src="dalancy.js"></script>
         </body>
         </html>
         

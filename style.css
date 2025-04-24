@@ -553,3 +553,25 @@ donation-section {
     margin: 0 auto;
   }
 }
+/* Desktop view */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    display: none; /* Initially hidden */
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+}

@@ -77,7 +77,7 @@ function scrollToSection(id) {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
 }
 
-const phrases1 = ["Welcome to Paws & Whiskers"];
+const phrases1 = ["Welcome to Paws & Whiskers!"];
 const phrases2 = ["Your journey to finding a loving companion starts here 🐾"];
 let i = 0, j = 0, currentPhrase1 = [], currentPhrase2 = [], isDeleting = false;
 const typedText1 = document.getElementById("typedText1");
