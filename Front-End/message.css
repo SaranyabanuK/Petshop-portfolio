@@ -1,0 +1,160 @@
+/* General Page Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f8f8;
+    margin: 0;
+
+  }
+  
+  /* Container */
+  .message-container {
+    background: #ffffff;
+    padding: 145px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    overflow-x: auto;
+    text-align: center;
+    background: center;
+  }
+  
+  /* Table Styling */
+  .message-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .message-table th, .message-table td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    word-wrap: break-word;
+  }
+  
+  .message-table th {
+    background-color: #1ca39c;
+    color: white;
+  }
+  
+  /* Respond Button */
+  .respond-btn {
+    padding: 8px 14px;
+    background-color: #00796b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .respond-btn:hover {
+    background-color: #004d40;
+  }
+  
+  /* Reply Form Styling */
+  .response-form {
+    background: #ffffff;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+  .response-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    resize: vertical;
+    font-size: 16px;
+  }
+  
+  .response-form button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  /* Send and Cancel buttons */
+  .response-form button[type="submit"] {
+    background-color: #1ca39c;
+    color: white;
+  }
+  
+  .response-form button[type="submit"]:hover {
+    background-color: #158b86;
+  }
+  
+  .response-form button[type="button"] {
+    background-color: #f0f0f0;
+  }
+  
+  .response-form button[type="button"]:hover {
+    background-color: #ddd;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .message-table th, .message-table td {
+      font-size: 14px;
+      padding: 10px;
+    }
+  }
+/* Table container to handle responsiveness */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Style the table */
+.messages-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px; /* So it doesn’t squish too much */
+}
+
+/* Make table cells responsive */
+.messages-table th,
+.messages-table td {
+  padding: 12px 15px;
+  text-align: left;
+  white-space: nowrap; /* Prevent text from breaking weirdly */
+}
+
+/* Adjust button nicely */
+.messages-table td button {
+  padding: 8px 12px;
+  background-color: #00897b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .messages-table {
+      min-width: unset;
+  }
+  .messages-table th,
+  .messages-table td {
+      padding: 10px 8px;
+      font-size: 14px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .messages-table {
+      font-size: 12px;
+  }
+  .messages-table td button {
+      padding: 6px 8px;
+      font-size: 12px;
+  }
+}

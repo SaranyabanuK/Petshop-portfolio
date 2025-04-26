@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="admin.css" />
+  <link rel="icon" href="images/Logo.png">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="admin-container">
+    <aside class="sidebar">
+      <h2>🐾Admin Panel</h2>
+      <nav>
+        <ul>
+          <li><a href="admin.html" onclick="showSection('dashboard')"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+          <li><a href="managepet.html" onclick="loadPage('edit-pets')"><i class="fas fa-dog"></i> Manage Pets</a></li>
+          <li><a href="message.html" onclick="loadPage('messages')"><i class="fas fa-envelope"></i> Messages</a></li>
+          <li><a href="petstory.html" onclick="loadPage('stories')"><i class="fas fa-book-open"></i> Pet Stories</a></li>
+          <li><a href="donations.html" onclick="loadPage('donations')"><i class="fas fa-hand-holding-heart"></i> Donations</a></li>
+          <li><a href="vetservice.html" onclick="loadPage('services')"><i class="fas fa-stethoscope"></i> Vet Services</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <div id="dashboard" class="admin-section">
+        <h2>Welcome, Admin 👋</h2>
+        <p>Use the sidebar to manage content. Live preview below:</p>
+      
+        <label for="pageSelector">Choose a page to preview:</label>
+<div class="preview-controls">
+  <select id="pageSelector" onchange="updatePreview()">
+    <option value="index.html">Main Page</option>
+    <option value="home.html">Home</option>
+    <option value="pets.html">Pets</option>
+    <option value="contact.html">Contact Us</option>
+  </select>
+  <button onclick="refreshPreview()" class="refresh-btn" title="Refresh Preview">
+    🔄 Refresh
+  </button>
+</div>      
+        <div class="preview-container">
+          <iframe id="sitePreview" src="index.html" class="site-preview"></iframe>
+        </div>
+      </main>
+      
+      
+  </div>
+
+  <script src="admin.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Manage Pet stories</title>
+  <link rel="stylesheet" href="admin.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="images/Logo.png">
+  <link rel="stylesheet" href="petstory.css">
+</head>
+<body>
+  <header>
+    <div class="admin-container">
+      <aside class="sidebar">
+        <h2>🐾Admin Panel</h2>
+        <nav>
+          <ul>
+            <li><a href="admin.html" onclick="showSection('dashboard')"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+            <li><a href="managepet.html" onclick="loadPage('edit-pets')"><i class="fas fa-dog"></i> Manage Pets</a></li>
+            <li><a href="message.html" onclick="loadPage('messages')"><i class="fas fa-envelope"></i> Messages</a></li>
+            <li><a href="petstory.html" onclick="loadPage('stories')"><i class="fas fa-book-open"></i> Pet Stories</a></li>
+            <li><a href="donations.html" onclick="loadPage('donations')"><i class="fas fa-hand-holding-heart"></i> Donations</a></li>
+            <li><a href="vetservice.html" onclick="loadPage('services')"><i class="fas fa-stethoscope"></i> Vet Services</a></li>
+          </ul>
+        </nav>
+      </aside>
+  
+  </header>
+
+  <main>
+    <section class="area">
+    <section id="story-management">
+      <h2>Pet Story Management</h2>
+      <p>(Will style soon)</p>
+    
+      <!-- Choose story type -->
+      <div class="story-type-selection">
+        <button class="btn" onclick="showAdoptedForm()">Submit Adopted Pet Story</button>
+        <button class="btn" onclick="showShelterForm()">Submit Shelter Pet Story</button>
+      </div>
+    
+      <!-- Table of available shelter pets -->
+      <div id="available-pets-table" style="display: none;">
+        <h3>Select Pet for Adoption Story</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Pet Name</th>
+              <th>Photo</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="pet-table-body">
+            <!-- Example row -->
+            <tr>
+              <td>Snowball</td>
+              <td><img src="images/Snowball.jpeg" alt="Snowball" width="50"></td>
+              <td><button class="btn btn-primary" onclick="selectPet('Snowball')">Adopt</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    
+      <!-- Adopted Pet Story Form -->
+      <div id="adopted-story-form" style="display: none;">
+        <h3>Submit Adopted Pet Story</h3>
+        <form id="adoptedForm">
+          <input type="hidden" id="adopted-pet-name" name="petName">
+          <!-- <div class="form-group">
+            <label for="adoptedPhoto">Pet Photo:</label>
+            <input type="file" id="adoptedPhoto" name="adoptedPhoto" class="form-control">
+          </div> -->
+          <div class="form-group">
+            <label for="adoptedStory">Pet Story:</label>
+            <textarea id="adoptedStory" name="adoptedStory" class="form-control" rows="4"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="familyFeedback">Family's Feedback:</label>
+            <textarea id="familyFeedback" name="familyFeedback" class="form-control" rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit Story</button>
+        </form>
+      </div>
+    
+      <!-- Shelter Pet Story Form -->
+      <div id="shelter-story-form" style="display: none;">
+        <h3>Submit Shelter Pet Story</h3>
+        <form id="shelterForm">
+          <div class="form-group">
+            <label for="shelterPetName">Pet Name:</label>
+            <input type="text" id="shelterPetName" name="shelterPetName" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="shelterPhoto">Pet Photo:</label>
+            <input type="file" id="shelterPhoto" name="shelterPhoto" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="shelterStory">Pet Story:</label>
+            <textarea id="shelterStory" name="shelterStory" class="form-control" rows="4"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit Story</button>
+        </form>
+      </div>
+    </section>
+    <div id="success-popup" class="hidden">
+      <p>✅ Story Added Successfully!</p>
+    </div>
+    </section>
+    
+    
+  </main>
+  <script src="script.js"></script>
+  <script src="petstory.js"></script>
+</body>
+</html>

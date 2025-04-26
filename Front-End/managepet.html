@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Manage Pets</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="admin.css" />
+  <link rel="icon" href="images/Logo.png">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="admin-container">
+        <aside class="sidebar">
+          <h2>🐾Admin Panel</h2>
+          <nav>
+            <ul>
+              <li><a href="admin.html" onclick="showSection('dashboard')"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+              <li><a href="managepet.html" onclick="loadPage('edit-pets')"><i class="fas fa-dog"></i> Manage Pets</a></li>
+              <li><a href="message.html" onclick="loadPage('messages')"><i class="fas fa-envelope"></i> Messages</a></li>
+              <li><a href="petstory.html" onclick="loadPage('stories')"><i class="fas fa-book-open"></i> Pet Stories</a></li>
+              <li><a href="donations.html" onclick="loadPage('donations')"><i class="fas fa-hand-holding-heart"></i> Donations</a></li>
+              <li><a href="vetservice.html" onclick="loadPage('services')"><i class="fas fa-stethoscope"></i> Vet Services</a></li>
+            </ul>
+          </nav>
+        </aside>
+    <div class="manage-pets-container">
+        <h2>Manage Pets</h2>
+        
+        <form id="petForm" enctype="multipart/form-data">
+            <input type="text" id="petName" placeholder="Pet Name" required>
+            <input type="number" id="petAge" placeholder="Pet Age" required>
+            <textarea id="petSpecial" placeholder="What's special?" required></textarea>
+            <input type="file" id="petImage" accept="image/*" required>
+            <button type="submit" class="button">Add Pet</button>
+          </form>
+          
+          <table id="petTable">
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Special</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="petTableBody">
+              <!-- Pets will appear here -->
+            </tbody>
+          </table>          
+      
+
+  </main>
+  
+  <script src="managepet.js"></script> <!-- We'll create this JS file to handle add/edit/delete -->
+  <script src="script.js"></script>
+</body>
+</html>
+

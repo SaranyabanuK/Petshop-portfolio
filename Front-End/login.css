@@ -1,0 +1,76 @@
+body {
+    background-color: #e5f9f7;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .login-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    width: 300px;
+    text-align: center;
+  }
+  
+  input {
+    width: 100%;
+    padding: 0.8rem;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+  }
+  
+  button {
+    background-color: teal;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 12px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .hidden {
+    display: none;
+    color: red;
+    margin-top: 10px;
+  }
+  body {
+    background: url("images/pet.jpg") no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  .login-container {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+  }
+  input, button {
+    font-size: 1rem;
+    padding: 0.9rem;
+    border-radius: 12px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  @media screen and (min-width: 1600px) {
+    .login-container {
+      max-width: 500px;
+      padding: 3rem;
+    }
+  }
+    
+    

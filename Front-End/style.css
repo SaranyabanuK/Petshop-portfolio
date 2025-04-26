@@ -575,3 +575,28 @@ donation-section {
     cursor: pointer;
   }
 }
+.admin-icon {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  color: #fff;
+  background-color: teal;
+  padding: 12px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  z-index: 999;
+  transition: transform 0.2s;
+}
+
+.admin-icon:hover {
+  transform: scale(1.1);
+  background-color: darkcyan;
+}
+@media screen and (max-width: 600px) {
+  .admin-icon {
+    bottom: 10px;
+    left: 10px;
+    padding: 10px;
+    font-size: 1rem;
+  }
+}
