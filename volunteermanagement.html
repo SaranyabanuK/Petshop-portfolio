@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Volunteers</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+  <link rel="icon" href="images/Logo.png">
+</head>
+<script>
+    function logout() {
+      // Clear admin login data (example if you store login in localStorage)
+      localStorage.removeItem('adminLoggedIn');
+    
+      // Redirect to login page
+      window.location.href = 'login.html'; // Change to your login page!
+    }
+    </script>
+<body>
+
+<div class="sidebar">
+  <h2>Admin Panel</h2>
+  <a href="admin.html">Dashboard</a>
+  <a href="managepet.html">Manage Pets</a>
+  <a href="message.html">Messages</a>
+  <a href="petstory.html">Pet Stories</a>
+  <a href="donations.html">Donations</a>
+  <a href="vetservice.html">Vet Services</a>
+  <a href="volunteermanagement.html" class="active">Volunteer Management</a> <!-- Active link -->
+  <a href="eventsmanagement.html">Events Management</a>
+  <a href="reportsanalytics.html">Reports & Analytics</a>
+  <a href="blogarticle.html">Blog/Articles</a>
+  <button class="logout-btn" onclick="logout()">⎋ Logout</button>
+</div>
+
+<div class="content">
+  <h1>Volunteer Management</h1>
+  
+  <!-- Volunteer Applications Table -->
+  <div class="table-card">
+    <h3>Volunteer Applications</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Application Date</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Draco Malfoy</td>
+          <td>drac2@gmail.com</td>
+          <td>+123456789</td>
+          <td>2025-04-25</td>
+          <td>Pending</td>
+          <td>
+            <button>Approve</button>
+            <button>Reject</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Hermione Granger</td>
+          <td>hermione@gmail.com</td>
+          <td>+987654321</td>
+          <td>2025-04-24</td>
+          <td>Approved</td>
+          <td>
+            <!-- <button>Revoke</button> -->
+            <button>Approve</button>
+            <button>Reject</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Add New Volunteer Form -->
+  <div class="form-card">
+    <h3>Add New Volunteer</h3>
+    <form action="/add-volunteer" method="POST">
+      <label for="volunteer-name">Name:</label>
+      <input type="text" id="volunteer-name" name="volunteer-name" required>
+
+      <label for="volunteer-email">Email:</label>
+      <input type="email" id="volunteer-email" name="volunteer-email" required>
+
+      <label for="volunteer-phone">Phone Number:</label>
+      <input type="text" id="volunteer-phone" name="volunteer-phone" required>
+
+      <label for="volunteer-status">Status:</label>
+      <select id="volunteer-status" name="volunteer-status">
+        <option value="pending">Pending</option>
+        <option value="approved">Approved</option>
+        <option value="rejected">Rejected</option>
+      </select>
+
+      <button type="submit">Add Volunteer</button>
+    </form>
+  </div>
+</div>
+<script src="volunteer.js"></script>
+</body>
+</html>

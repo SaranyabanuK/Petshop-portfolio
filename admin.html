@@ -1,56 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin Dashboard</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="admin.css" />
-  <link rel="icon" href="images/Logo.png">
-  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+    
 </head>
+<script>
+  function logout() {
+    // Clear admin login data (example if you store login in localStorage)
+    localStorage.removeItem('adminLoggedIn');
+  
+    // Redirect to login page
+    window.location.href = 'login.html'; // Change to your login page!
+  }
+  </script>
+  
 <body>
 
-  <div class="admin-container">
-    <aside class="sidebar">
-      <h2>🐾Admin Panel</h2>
-      <nav>
-        <ul>
-          <li><a href="admin.html" onclick="showSection('dashboard')"><i class="fas fa-chart-line"></i> Dashboard</a></li>
-          <li><a href="managepet.html" onclick="loadPage('edit-pets')"><i class="fas fa-dog"></i> Manage Pets</a></li>
-          <li><a href="message.html" onclick="loadPage('messages')"><i class="fas fa-envelope"></i> Messages</a></li>
-          <li><a href="petstory.html" onclick="loadPage('stories')"><i class="fas fa-book-open"></i> Pet Stories</a></li>
-          <li><a href="donations.html" onclick="loadPage('donations')"><i class="fas fa-hand-holding-heart"></i> Donations</a></li>
-          <li><a href="vetservice.html" onclick="loadPage('services')"><i class="fas fa-stethoscope"></i> Vet Services</a></li>
-        </ul>
-      </nav>
-    </aside>
+<div class="sidebar">
+  <h2>Admin Panel</h2>
+  <a href="admin.html">Dashboard</a>
+  <a href="managepet.html">Manage Pets</a>
+  <a href="message.html">Messages</a>
+  <a href="petstory.html">Pet Stories</a>
+  <a href="donations.html">Donations</a>
+  <a href="vetservice.html">Vet Services</a>
+  <a href="volunteermanagement.html">Volunteer Management</a>
+  <a href="eventsmanagement.html">Events Management</a>
+  <a href="reportsanalytics.html">Reports & Analytics</a>
+  <a href="blogarticle.html">Blog/Articles</a>
+  <button class="logout-btn" onclick="logout()">⎋ Logout</button>
 
-    <div id="dashboard" class="admin-section">
-        <h2>Welcome, Admin 👋</h2>
-        <p>Use the sidebar to manage content. Live preview below:</p>
-      
-        <label for="pageSelector">Choose a page to preview:</label>
-<div class="preview-controls">
-  <select id="pageSelector" onchange="updatePreview()">
-    <option value="index.html">Main Page</option>
-    <option value="home.html">Home</option>
-    <option value="pets.html">Pets</option>
-    <option value="contact.html">Contact Us</option>
-  </select>
-  <button onclick="refreshPreview()" class="refresh-btn" title="Refresh Preview">
-    🔄 Refresh
-  </button>
-</div>      
-        <div class="preview-container">
-          <iframe id="sitePreview" src="index.html" class="site-preview"></iframe>
-        </div>
-      </main>
-      
-      
+</div>
+
+<div class="content">
+
+  <!-- Summary Cards -->
+  <div class="cards">
+    <div class="card">
+      <div class="card-icon">🐾</div>
+      <div class="card-content">
+        <h3>45</h3>
+        <p>Total Pets Available</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-icon">📋</div>
+      <div class="card-content">
+        <h3>8</h3>
+        <p>Pending Requests</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-icon">💰</div>
+      <div class="card-content">
+        <h3>$5,230</h3>
+        <p>Total Donations</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-icon">📅</div>
+      <div class="card-content">
+        <h3>2</h3>
+        <p>Upcoming Events</p>
+      </div>
+    </div>
   </div>
 
-  <script src="admin.js"></script>
-  <script src="script.js"></script>
+  <!-- Charts Section -->
+  <div class="charts">
+    <div class="chart-card">
+      <h3>Adoptions Over Time</h3>
+      <canvas id="adoptionsChart"></canvas>
+    </div>
+    <div class="chart-card">
+      <h3>Top Donors</h3>
+      <canvas id="donorsChart"></canvas>
+    </div>
+  </div>
+
+  <!-- Table Section -->
+  <div class="table-card">
+    <h3>Recent Adoption Requests</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Pet Name</th>
+          <th>Applicant</th>
+          <th>Date</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Max</td>
+          <td>Albus Dumbledore</td>
+          <td>2025-04-25</td>
+          <td>Pending</td>
+        </tr>
+        <tr>
+          <td>Bella</td>
+          <td>Severus Snape</td>
+          <td>2025-04-24</td>
+          <td>Approved</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Notifications Section -->
+  <div class="notifications">
+    <h3>Notifications</h3>
+    <ul>
+      <li>📩 3 unread messages from users.</li>
+      <li>🏥 Vet appointment scheduled for May 2.</li>
+      <li>🙋 2 new volunteer applications.</li>
+    </ul>
+  </div>
+
+</div>
+
+<script>
+  // Adoptions Chart
+  new Chart(document.getElementById('adoptionsChart'), {
+    type: 'line',
+    data: {
+      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+      datasets: [{
+        label: 'Adoptions',
+        data: [3, 4, 5, 8, 6, 7, 9, 11, 10, 6, 7, 8],
+        borderColor: '#008080',
+        backgroundColor: 'rgba(0,128,128,0.1)',
+        fill: true,
+      }]
+    }
+  });
+
+  // Top Donors Chart
+  new Chart(document.getElementById('donorsChart'), {
+    type: 'bar',
+    data: {
+      labels: ['Alice', 'Bob', 'Charlie', 'Diana', 'Edward'],
+      datasets: [{
+        label: 'Donations ($)',
+        data: [1200, 950, 870, 650, 430],
+        backgroundColor: '#20c997'
+      }]
+    }
+  });
+</script>
+
 </body>
 </html>

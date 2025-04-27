@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Manage Blog & Articles</title>
+  <link rel="stylesheet" href="admin.css">
+  <link rel="icon" href="images/Logo.png">
+</head>
+<script>
+    function logout() {
+      // Clear admin login data (example if you store login in localStorage)
+      localStorage.removeItem('adminLoggedIn');
+    
+      // Redirect to login page
+      window.location.href = 'login.html'; // Change to your login page!
+    }
+    </script>
+    
+<body>
+
+<div class="sidebar">
+  <h2>Admin Panel</h2>
+  <a href="admin.html">Dashboard</a>
+  <a href="managepet.html">Manage Pets</a>
+  <a href="message.html">Messages</a>
+  <a href="petstory.html">Pet Stories</a>
+  <a href="donations.html">Donations</a>
+  <a href="vetservice.html">Vet Services</a>
+  <a href="volunteermanagement.html">Volunteer Management</a>
+  <a href="eventsmanagement.html">Events Management</a>
+  <a href="reportsanalytics.html">Reports & Analytics</a>
+  <a href="blogarticle.html" class="active">Blog/Articles</a>
+  <button class="logout-btn" onclick="logout()">⎋ Logout</button>
+</div>
+
+<div class="content">
+  <h1>Blog & Article Management</h1>
+
+  <!-- Blog Posts Table -->
+  <div class="table-card">
+    <h3>Manage Blogs and Articles</h3>
+    <table id="blogs-table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Date Published</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Importance of Adopting Pets</td>
+          <td>2025-04-20</td>
+          <td>Published</td>
+          <td>
+            <button class="edit-btn">Edit</button>
+            <button class="delete-btn">Delete</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Volunteer Experience in Animal Rescue</td>
+          <td>2025-04-15</td>
+          <td>Draft</td>
+          <td>
+            <button class="edit-btn">Edit</button>
+            <button class="delete-btn">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Add New Blog Form -->
+  <div class="form-card">
+    <h3>Add New Blog/Article</h3>
+    <form id="add-blog-form">
+      <label for="blog-title">Title:</label>
+      <input type="text" id="blog-title" name="blog-title" required>
+
+      <label for="blog-date">Publish Date:</label>
+      <input type="date" id="blog-date" name="blog-date" required>
+
+      <label for="blog-status">Status:</label>
+      <select id="blog-status" name="blog-status" required>
+        <option value="Published">Published</option>
+        <option value="Draft">Draft</option>
+      </select>
+
+      <button type="submit">Add Blog</button>
+    </form>
+  </div>
+  <div class="editor-section">
+    <h2>Create a New Blog / Article</h2>
+    
+    <form id="new-blog-form">
+      <label for="blog-title-input">Title:</label>
+      <input type="text" id="blog-title-input" required>
+  
+      <label for="blog-description-input">Short Description:</label>
+      <textarea id="blog-description-input" required></textarea>
+  
+      <label>Content:</label>
+      <div id="editor-container"></div>
+  
+      <label for="blog-image-upload">Upload Image:</label>
+      <input type="file" id="blog-image-upload" accept="image/*">
+  
+      <label for="blog-video-upload">Upload Video:</label>
+      <input type="file" id="blog-video-upload" accept="video/*">
+  
+      <button type="submit" class="publish-btn">Publish Blog</button>
+      <button type="button" class="draft-btn">Save as Draft</button>
+    </form>
+  </div>
+  
+  <!-- Quill.js Library (CDN) -->
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+  <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+  
+
+</div>
+
+<script src="blogarticle.js"></script>
+</body>
+</html>

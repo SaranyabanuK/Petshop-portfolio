@@ -3,6 +3,10 @@
     padding: 60px 50px;
     background-color: #f7fefe;
     text-align: center;
+    margin-left: 220px; /* leave space for sidebar */
+    padding: 30px;
+    background-color: #e6fcf5; /* soft light teal */
+    min-height: 100vh;
   }
   
   /* Section headings */

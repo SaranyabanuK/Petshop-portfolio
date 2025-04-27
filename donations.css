@@ -1,0 +1,71 @@
+.main-content {
+    margin-left: 220px; /* leave space for sidebar */
+    padding: 30px;
+    background-color: #e6fcf5; /* soft light teal */
+    min-height: 100vh;
+    text-align: center;
+  }
+  
+  .offer-control {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .offer-control input {
+    width: 60px;
+    padding: 5px;
+    border: 1px solid teal;
+    border-radius: 5px;
+    margin-left: 10px;
+  }
+  
+  .offer-control button {
+    background-color: teal;
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    margin-left: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .offer-control button:hover {
+    background-color: #028d8d;
+  }
+  
+  .table-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th {
+    background-color: teal;
+    color: white;
+    padding: 12px;
+    text-align: center;
+  }
+  
+  td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #f1f1f1;
+  }
+  
+  tr:hover {
+    background-color: #f1fcfb;
+  }
+  
+  .empty-message {
+    text-align: center;
+    font-size: 18px;
+    color: gray;
+    margin-top: 30px;
+  }
+  

@@ -6,21 +6,79 @@
   <title>Manage Donations</title>
   <link rel="stylesheet" href="admin.css"> 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="style.css" />
+  <!-- <link rel="stylesheet" href="style.css" /> -->
+  <link rel="icon" href="images/Logo.png">
+  <link rel="stylesheet" href="donations.css">
 </head>
+<script>
+  function logout() {
+    // Clear admin login data (example if you store login in localStorage)
+    localStorage.removeItem('adminLoggedIn');
+  
+    // Redirect to login page
+    window.location.href = 'login.html'; // Change to your login page!
+  }
+  </script>
 <body>
-  <header>
-    <a href="admin.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
-  </header>
+  <div class="sidebar">
+    <h2>Admin Panel</h2>
+    <a href="admin.html">Dashboard</a>
+    <a href="managepet.html">Manage Pets</a>
+    <a href="message.html">Messages</a>
+    <a href="petstory.html">Pet Stories</a>
+    <a href="donations.html">Donations</a>
+    <a href="vetservice.html">Vet Services</a>
+    <a href="volunteermanagement.html">Volunteer Management</a>
+    <a href="eventsmanagement.html">Events Management</a>
+    <a href="reportsanalytics.html">Reports & Analytics</a>
+    <a href="blogarticle.html">Blog/Articles</a>
+    <button class="logout-btn" onclick="logout()">⎋ Logout</button>
+  </div>
 
+
+
+      <div class="main-content">
   <main>
-    <h1>Manage Donations</h1>
-    <p>This is where you’ll view donations with details.
-      (Will be adding soon)
-    </p>
-    
-    <!-- You can add your table, forms, etc. here -->
+    <h1>Donations & Contributions</h1>
+
+<div class="offer-control">
+  <label for="offerInput">Current Offer %: </label>
+  <input type="number" id="offerInput" value="5" min="0" max="100">
+  <button id = "updateButton" onclick="updateOffer()">Update Offer %</button>
+</div>
+
+<table id="donationsTable">
+  <thead>
+    <tr>
+      <th>Donor's Name</th>
+      <th>Amount</th>
+      <th>Date & Time</th>
+      <th>Message</th>
+      <th>Offer %</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Example row -->
+    <tr>
+      <td>Arthur Weasley</td>
+      <td>$50</td>
+      <td>2025-04-26 10:30 AM</td>
+      <td>Keep rescuing!</td>
+      <td class="offerPercent">5%</td>
+    </tr>
+    <tr>
+      <td>Draco Malfoy</td>
+      <td>$50</td>
+      <td>2025-04-26 10:30 AM</td>
+      <td>Take care of Forrest!</td>
+      <td class="offerPercent">5%</td>
+    </tr>
+  </tbody>
+</table>
+
   </main>
   <script src="script.js"></script>
+  <script src="donations.js"></script>
+  <script src="admin.js"></script>
 </body>
 </html>

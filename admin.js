@@ -79,5 +79,11 @@ function loadPage(section) {
     iframe.src = iframe.src;
   }
 
+// function logout() {
+//     // Example: You can clear session storage, redirect to login page, etc.
+//     alert("Logging out...");
+//     window.location.href = "login.html"; // Redirect to login page
+// }
+
 
   

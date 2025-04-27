@@ -1,4 +1,4 @@
-
+/* 
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
@@ -8,15 +8,14 @@ body {
   .admin-container {
     display: flex;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
   }
-  
-  .sidebar {
-    width: 220px;
-    background: teal;
-    color: white;
-    padding: 20px;
-  }
+    .sidebar {
+      width: 220px;
+      background: teal;
+      color: white;
+      padding: 20px;
+      min-height: 105vh; /* ✅ new */
   
   .sidebar h2 {
     margin-bottom: 30px;
@@ -202,7 +201,7 @@ body {
   button.delete {
     background-color: #e57373;
     color: white;
-  }
+  } */
   /* Make sure your page takes full height */
 /* html, body {
   height: 100%;
@@ -361,3 +360,218 @@ table img {
     padding: 12px;
   }
 }
+.logout-button {
+  width: 80%;
+  margin: 20px 10%;
+  padding: 10px;
+  background-color: #ff4d4d;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #cc0000;
+}
+/* Full height fix */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Admin layout */
+.admin-container {
+  display: flex;
+  height: 100vh; /* Full screen */
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background: teal;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Push logout to bottom */
+}
+
+/* Main content */
+.admin-section {
+  flex: 1;
+  background-color: #f8f8f8;
+  padding: 30px;
+  overflow-y: auto;
+}
+
+/* Logout button (already in your css, it's good) */
+.logout-button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #ff4d4d;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+.logout-button:hover {
+  background-color: #cc0000;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
+    body { background: #f7f9fb; }
+    .sidebar {
+      position: fixed;
+      left: 0; top: 0; bottom: 0;
+      width: 220px;
+      background: #008080;
+      padding: 20px;
+      color: white;
+    }
+    .sidebar h2 { margin-bottom: 30px; font-size: 22px; }
+    .sidebar a { color: white; display: block; margin: 15px 0; text-decoration: none; }
+    .content {
+      margin-left: 240px;
+      padding: 20px;
+    }
+    .cards {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    .card {
+      flex: 1;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .card-icon {
+      font-size: 30px;
+    }
+    .card-content h3 { font-size: 22px; }
+    .card-content p { color: gray; }
+    .charts {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    .chart-card {
+      flex: 1;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .table-card, .notifications {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 10px; text-align: left; border-bottom: 1px solid #ddd; }
+    th { background: #f0f0f0; }
+
+    /* Volunteer management */
+    /* Styling for the volunteer management page */
+
+/* Table card */
+.table-card {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-top: 30px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+button {
+  padding: 8px 16px;
+  border: none;
+  background-color: #20c997;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+button:hover {
+  background-color: #17a589;
+}
+
+/* Form card */
+.form-card {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-top: 30px;
+}
+
+form label {
+  font-weight: bold;
+  display: block;
+  margin-top: 10px;
+}
+
+form input, form select, form button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form button {
+  background-color: #20c997;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #17a589;
+}
+/* .logout-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #ff4d4d; /* red color */
+  /* color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: background-color 0.3s, transform 0.3s;
+  z-index: 999;
+}
+
+.logout-btn:hover {
+  background-color: #e60000;
+  transform: scale(1.1);
+} */
+

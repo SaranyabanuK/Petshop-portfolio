@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Events/title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+  <link rel="icon" href="images/Logo.png">
+</head>
+<script>
+    function logout() {
+      // Clear admin login data (example if you store login in localStorage)
+      localStorage.removeItem('adminLoggedIn');
+    
+      // Redirect to login page
+      window.location.href = 'login.html'; // Change to your login page!
+    }
+    </script>
+<body>
+
+<div class="sidebar">
+  <h2>Admin Panel</h2>
+  <a href="admin.html">Dashboard</a>
+  <a href="managepet.html">Manage Pets</a>
+  <a href="message.html">Messages</a>
+  <a href="petstory.html">Pet Stories</a>
+  <a href="donations.html">Donations</a>
+  <a href="vetservice.html">Vet Services</a>
+  <a href="volunteermanagement.html">Volunteer Management</a>
+  <a href="eventsmanagement.html" class="active">Events Management</a> <!-- Active link -->
+  <a href="reportsanalytics.html">Reports & Analytics</a>
+  <a href="blogarticle.html">Blog/Articles</a>
+  <button class="logout-btn" onclick="logout()">⎋ Logout</button>
+</div>
+
+<div class="content">
+  <h1>Event Management</h1>
+  
+  <!-- Event List Table -->
+  <div class="table-card">
+    <h3>Event List</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Event Name</th>
+          <th>Date & Time</th>
+          <th>Location</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="event-table-body">
+        <!-- Example event row -->
+        <tr>
+          <td class="editable" data-field="event-name">Adoption Drive</td>
+          <td class="editable" data-field="event-date-time">2025-05-10 10:00 AM</td>
+          <td class="editable" data-field="event-location">Jaffna Park</td>
+          <td class="editable" data-field="event-status">Scheduled</td>
+          <td>
+            <button class="edit-btn">Edit</button>
+            <button class="delete-btn">Delete</button>
+          </td>
+        </tr>
+        <tr>
+          <td class="editable" data-field="event-name">Fundraising Event</td>
+          <td class="editable" data-field="event-date-time">2025-06-15 03:00 PM</td>
+          <td class="editable" data-field="event-location">Community Center</td>
+          <td class="editable" data-field="event-status">Scheduled</td>
+          <td>
+            <button class="edit-btn">Edit</button>
+            <button class="delete-btn">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Add New Event Form -->
+  <div class="form-card">
+    <h3>Add New Event</h3>
+    <form id="add-event-form" action="/add-event" method="POST">
+      <label for="event-name">Event Name:</label>
+      <input type="text" id="event-name" name="event-name" required>
+
+      <label for="event-date">Event Date:</label>
+      <input type="date" id="event-date" name="event-date" required>
+
+      <label for="event-time">Event Time:</label>
+      <input type="time" id="event-time" name="event-time" required>
+
+      <label for="event-location">Event Location:</label>
+      <input type="text" id="event-location" name="event-location" required>
+
+      <label for="event-status">Event Status:</label>
+      <select id="event-status" name="event-status">
+        <option value="scheduled">Scheduled</option>
+        <option value="completed">Completed</option>
+        <option value="cancelled">Cancelled</option>
+      </select>
+
+      <button type="submit">Add Event</button>
+    </form>
+  </div>
+</div>
+
+<script src="eventsmanagement.js"></script>
+</body>
+</html>
